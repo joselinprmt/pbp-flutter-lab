@@ -32,12 +32,14 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
+    // Increment counter by 1
     setState(() {
       _counter++;
     });
   }
 
   void _decrementCounter() {
+    // Decrement counter by 1
     setState(() {
       _counter--;
     });
@@ -57,6 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            // Handle conditions when counter number is odd or/and even
             _counter % 2 == 0
                 ? const Text(
                     "GENAP",
@@ -81,7 +84,8 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.only(left: 30),
         child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
           Visibility(
-            visible: _counter < 1 ? false : true,
+            // Decrement button will be invisible when counter is less or equals 0
+            visible: _counter <= 0 ? false : true,
             child: FloatingActionButton(
               // Decrement button
               onPressed: _decrementCounter,
