@@ -11,7 +11,7 @@ ___
 
 ### Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
 
-- `Scaffold` adalah widget utama pada flutter untuk membuat halaman utama. Biasanya memiliki bebrapa parameter seperti app bar, body, dan floating action bar.
+- `Scaffold` adalah widget utama pada flutter untuk membuat halaman utama. Biasanya memiliki beberapa parameter seperti app bar, body, dan floating action bar.
 - `Text` berfungsi untuk menampilkan teks.
 - `Layout`: Center, Row, Column, Expanded class, berguna untuk mengatur tata letak dari widget.
 - `Container` berfungsi sebagai 'container' yang berguna untuk menampung atau memisahkan widget lain.
