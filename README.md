@@ -82,3 +82,15 @@ Cara kerja Navigator dalam memanage dan mengganti halaman dari aplikasi Flutter 
 - Membuat file `data_budget.dart` untuk menampilkan judul, nominal, jenis, dan tanggal yang telah ditambahkan pada `form_budget`.
 - `data_budget.dart` memiliki atribut List untuk menampung masing-masing input judul, nominal, jenis, dan tanggal, serta memiliki method addBudget yang akan dipanggil ketika submit form pada `form_budget`, yang berfungsi untuk memasukkan masing-masing field ke masing-masing list.
 - Membuat file `drawer.dart` dan digunakan untuk refactoring dan memindahkan drawer dari `main.dart` ke dalam file terpisah.
+
+____
+
+## Tugas 9
+
+### Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+
+### Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+
+### Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
+
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.

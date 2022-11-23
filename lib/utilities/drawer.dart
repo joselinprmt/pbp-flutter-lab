@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:counter_7/main.dart';
-import 'package:counter_7/form_budget.dart';
-import 'package:counter_7/data_budget.dart';
+import 'package:counter_7/page/budget_form.dart';
+import 'package:counter_7/page/budget_data.dart';
+
+import '../page/watch_list.dart';
 
 Drawer buildDrawer(context) {
   return Drawer(
@@ -35,6 +37,16 @@ Drawer buildDrawer(context) {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => const DataBudgetPage()),
+            );
+          },
+        ),
+        ListTile(
+          title: const Text('My Watch List'),
+          onTap: () {
+            // Route menu ke halaman form
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const MyWatchListPage()),
             );
           },
         ),
