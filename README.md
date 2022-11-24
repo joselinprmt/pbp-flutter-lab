@@ -89,8 +89,34 @@ ____
 
 ### Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
 
+Bisa. Namun hal tersebut bukan merupakan best practice sehingga tidak disarankan. Lebih disarankan untuk inisiasi model terlebih dahulu untuk memudahkan serialisasi data. Terlebih lagi, untuk app yang besar dan kompleks, menampung data tanpa membuat model akan cenderung lebih sulit, repetitif, dan lebih rentan terhadap eror, sehingga model akan lebih membuat pengambilan data lebih terstruktur.
+
 ### Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+
+- `Scaffold` adalah widget utama pada Flutter untuk membuat halaman utama. Biasanya memiliki beberapa parameter seperti app bar, body, dan floating action bar.
+- `Text` berfungsi untuk menampilkan teks.
+- `Layout`: Center, Row, Column, berguna untuk mengatur tata letak dari widget.
+- `Drawer` berfungsi untuk menampilkan panel navigasi antar halaman.
+- `Container` berfungsi sebagai 'container' yang berguna untuk menampung atau memisahkan widget lain.
+- `Padding` berfungsi untuk menambah space kosong di antara widget lain.
+- `Navigator` berfungsi untuk melakukan routing dan berpindah antar page.
+- `Checkbox` berfungsi untuk menampilkan checkbox.
 
 ### Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
 
+- Untuk mengambil data dari internet, inisialisasi package http dengan memanggil `flutter pub add http` pada terminal
+- Lalu menambahkan kode permission untuk mengakses internet pada `AndroidManifest.xml`
+- Pada file dimana kita ingin mengambil data dari json, import package http agar bisa melakukan http request
+- Menginisiasi `FutureBuilder` untuk melakukan fetch data setelah dilakukan pengambilan data json.
+- Untuk menampilkan data tersebut, dapat dipanggil anonymous function yang akan mereturn widget berisi data.
+- Ketika dalam proses pengambilan data dari http request, kita dapat memanfaatkan snapshot untuk mengecek apakah data sudah berhasil diambil atau tidak. Ketika dalam proses, atau `snapshot.data` masih null, kita dapat menampilkan `CircularProgressIndicator()` untuk menampilkan loading page.
+- Data akan ditampilkan jika `snapshot.data` bukan null, dan data dapat ditampilkan pada page.
+
 ### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+
+- Mengorganisasi file-file pada lib dengan membuat folder model, page, dan utilities.
+- Membuat file `watch_list.dart`, dan melakukan routing ke page tersebut pada drawer.
+- Menambahkan dependensi http serta permission untuk mengakses internet pada `AndroidManifest.xml` agar dapat melakukan http request dan fetch data json.
+- Membuat model mywatchlist serta file `fetch_mywatchlist.dart` untuk pengambilan dan fetch data json dari web heroku pada Tugas 3.
+- Pada `watch_list.dart`, dibuat builder yang memanggil fungsi `fetchMywatchList()` dan memanfaatkan snapshot untuk menampilkan dan navigasi dari tiap judul film pada wathlist.
+- Membuat file `watch_detail.dart` untuk menampilkan detail dari film yang akan ditampilkan jika judul pada `watch_list.dart` ditekan. Ditambahkan juga tombol back untuk kembali ke page sebelumnya.
