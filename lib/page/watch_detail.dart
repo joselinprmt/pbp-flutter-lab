@@ -85,8 +85,7 @@ class MyWatchDetailPage extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Align(
               alignment: Alignment.topRight,
-              child: Text(
-                  film.fields.watched == true ? "watched" : "not watched",
+              child: Text(film.fields.watched ? "watched" : "not watched",
                   style: const TextStyle(fontSize: 20),
                   textAlign: TextAlign.left),
             ),
